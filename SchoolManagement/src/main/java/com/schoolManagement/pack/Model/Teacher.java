@@ -12,7 +12,7 @@ import lombok.Data;
 
 @Entity
 @Data
-public class Teacher {
+public class  Teacher{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
