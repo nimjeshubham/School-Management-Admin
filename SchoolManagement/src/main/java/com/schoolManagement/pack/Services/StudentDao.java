@@ -35,6 +35,7 @@ public class StudentDao {
 			ss.setAddress(s.getAddress());
 			ss.setSchool(s.getSchool());
 			ss.setSclass(s.getSclass());
+			ss.setPassword(s.getPassword());
 			return repo.save(ss);
 		}
 		

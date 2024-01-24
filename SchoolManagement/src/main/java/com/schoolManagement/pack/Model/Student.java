@@ -21,6 +21,7 @@ public class Student {
 	private String fName;
 	private String mName;
 	private String address;
+	private String password;
 	
 	@ManyToOne
 	private School school;

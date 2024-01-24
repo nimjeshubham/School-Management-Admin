@@ -5,9 +5,9 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.schoolManagement.pack.Model.Subject;
+
 import com.schoolManagement.pack.Model.Teacher;
-import com.schoolManagement.pack.Repositories.SubjectRepo;
+
 import com.schoolManagement.pack.Repositories.TeacherRepo;
 
 @Service
@@ -33,6 +33,7 @@ public class TeacherDao {
 			ss.setName(s.getName());
 			ss.setAddress(s.getAddress());
 			ss.setSchool(s.getSchool());
+			ss.setPassword(s.getPassword());
 			return repo.save(ss);
 		}
 		

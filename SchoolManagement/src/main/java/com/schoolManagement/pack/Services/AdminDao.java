@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.schoolManagement.pack.Model.Admin;
-import com.schoolManagement.pack.Model.Marksheet;
+
 import com.schoolManagement.pack.Repositories.AdminRepo;
 
 @Service

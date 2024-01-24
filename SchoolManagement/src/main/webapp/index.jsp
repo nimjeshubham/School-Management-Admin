@@ -20,8 +20,12 @@ Password <input type="password" name ="pass"><br>
 <br>
 
 <form action="userLogin">
-User ID <input type="text" name ="adminID"><br>
+User ID <input type="text" name ="userID"><br>
 Password <input type="password" name ="pass"><br>
+<input type="radio" id="student" name="selector" value="student">
+<label for="student">Student</label><br>
+<input type="radio" id="teacher" name="selector" value="teacher">
+<label for="teacher">Teacher</label><br>
 <input type ="submit" value ="Login">
 </form>
 

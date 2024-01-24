@@ -19,6 +19,7 @@ public class  Teacher{
 	private int tID;
 	private String name;
 	private String address;
+	private String password;
 	
 	@ManyToOne
 	private School school;
