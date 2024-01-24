@@ -61,6 +61,48 @@ public class AdminPage {
 	
 		
 	}
+	
+	@RequestMapping("/schoolOperations")
+	public ModelAndView schoolOperations(HttpServletRequest req, HttpServletResponse res) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("schoolOperations");
+		return mv;
+	}
+	
+	@RequestMapping("/classOperations")
+	public ModelAndView classOperations(HttpServletRequest req, HttpServletResponse res) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("classOperations");
+		return mv;
+	}
+	
+	@RequestMapping("/teacherOperations")
+	public ModelAndView teacherOperations(HttpServletRequest req, HttpServletResponse res) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("teacherOperations");
+		return mv;
+	}
+	
+	@RequestMapping("/studentOperations")
+	public ModelAndView studentOperations(HttpServletRequest req, HttpServletResponse res) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("studentOperations");
+		return mv;
+	}
+	
+	@RequestMapping("/subjectOperations")
+	public ModelAndView subjectOperations(HttpServletRequest req, HttpServletResponse res) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("subjectOperations");
+		return mv;
+	}
+	
+	@RequestMapping("/marksheetOperations")
+	public ModelAndView marksheetOperations(HttpServletRequest req, HttpServletResponse res) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("marksheetOperations");
+		return mv;
+	}
 
 
 }

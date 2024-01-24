@@ -47,9 +47,9 @@ Subject Operations: for registration, get information, update details and delete
 
 <br>
 <br>
-<form action="subjectOperations">
-Subject Operations: for registration, get information, update details and delete information<br>
-<input type="submit" value="Subject"> 
+<form action="marksheetOperations">
+Marksheet Operations: for registration, get information, update details and delete information<br>
+<input type="submit" value="Marksheet"> 
 </form>
 
 
