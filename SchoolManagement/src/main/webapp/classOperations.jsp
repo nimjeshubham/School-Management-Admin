@@ -8,5 +8,51 @@
 </head>
 <body>
 
+<br>
+<br>
+
+<form action="classRegitration">
+For register class<br>
+<input type="submit" value ="Register">
+</form>
+
+<br>
+<br>
+
+<form action="getInfoclass">
+Get Information for all class<br>
+<input type="submit" value ="Details">
+</form>
+
+<br>
+<br>
+
+<form action="getOneclass">
+For Individual Class Information<br>
+<input type="text" name ="classID">
+<input type="submit" value="Details">
+</form>
+
+<br>
+<br>
+
+<form action="updateclass">
+for update Information of class<br>
+<input type="text" name="classID">
+<input type ="submit" value="Update">
+</form>
+
+<br>
+<br>
+
+<form action="deleteclass">
+for delete class information<br>
+<input type="text" name="classID">
+<input type="submit" value="Delete">
+</form>
+
+<br>
+<br>
+
 </body>
 </html>

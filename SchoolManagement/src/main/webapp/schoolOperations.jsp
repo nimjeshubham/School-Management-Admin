@@ -8,15 +8,24 @@
 </head>
 <body>
 
+<br>
+<br>
+
 <form action="schoolRegitration">
 For register school<br>
 <input type="submit" value ="Register">
 </form>
 
+<br>
+<br>
+
 <form action="getInfoSchool">
-Get Information for all Student<br>
+Get Information for all School<br>
 <input type="submit" value ="Details">
 </form>
+
+<br>
+<br>
 
 <form action="getOneSchool">
 For Individual School Information<br>
@@ -24,16 +33,26 @@ For Individual School Information<br>
 <input type="submit" value="Details">
 </form>
 
+<br>
+<br>
+
 <form action="updateSchool">
 for update Information of school<br>
 <input type="text" name="schoolID">
 <input type ="submit" value="Update">
 </form>
 
+<br>
+<br>
+
 <form action="deleteSchool">
 for delete school information<br>
 <input type="text" name="schoolID">
 <input type="submit" value="Delete">
 </form>
+
+<br>
+<br>
+
 </body>
 </html>

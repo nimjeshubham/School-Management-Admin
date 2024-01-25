@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h1>Admin Page</h1>
 <br>
 <br>
 <form action="schoolOperations">

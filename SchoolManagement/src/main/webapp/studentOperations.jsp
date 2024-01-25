@@ -8,5 +8,50 @@
 </head>
 <body>
 
+<br>
+<br>
+
+<form action="studentRegitration">
+For register student<br>
+<input type="submit" value ="Register">
+</form>
+
+<br>
+<br>
+
+<form action="getInfoStudent">
+Get Information for all Student<br>
+<input type="submit" value ="Details">
+</form>
+
+<br>
+<br>
+
+<form action="getOneStudent">
+For Individual Student Information<br>
+<input type="text" name ="studentID">
+<input type="submit" value="Details">
+</form>
+
+<br>
+<br>
+
+<form action="updateStudent">
+for update Information of student<br>
+<input type="text" name="studentID">
+<input type ="submit" value="Update">
+</form>
+
+<br>
+<br>
+
+<form action="deleteStudent">
+for delete student information<br>
+<input type="text" name="studentID">
+<input type="submit" value="Delete">
+</form>
+
+<br>
+<br>
 </body>
 </html>

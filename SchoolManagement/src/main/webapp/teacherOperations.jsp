@@ -8,5 +8,51 @@
 </head>
 <body>
 
+<br>
+<br>
+
+<form action="teacherRegitration">
+For register teacher<br>
+<input type="submit" value ="Register">
+</form>
+
+<br>
+<br>
+
+<form action="getInfoTeacher">
+Get Information for all teacher<br>
+<input type="submit" value ="Details">
+</form>
+
+<br>
+<br>
+
+<form action="getOneTeacher">
+For Individual teacher Information<br>
+<input type="text" name ="teacherID">
+<input type="submit" value="Details">
+</form>
+
+<br>
+<br>
+
+<form action="updateTeacher">
+for update Information of teacher<br>
+<input type="text" name="teacherID">
+<input type ="submit" value="Update">
+</form>
+
+<br>
+<br>
+
+<form action="deleteTeacher">
+for delete teacher information<br>
+<input type="text" name="teacherID">
+<input type="submit" value="Delete">
+</form>
+
+<br>
+<br>
+
 </body>
 </html>
