@@ -11,6 +11,7 @@ import com.schoolManagement.pack.Model.Admin;
 import com.schoolManagement.pack.Services.AdminDao;
 
 import jakarta.servlet.http.HttpServletRequest;
+
 import jakarta.servlet.http.HttpServletResponse;
 
 @Controller
@@ -19,14 +20,14 @@ public class AdminPage {
 	@Autowired
 	AdminDao ad;
 	
-	/*@RequestMapping("/adminLogin")
+	@RequestMapping("/adminLogin")
 	public ModelAndView adminLogin(HttpServletRequest req, HttpServletResponse res) {
     ModelAndView mv = new ModelAndView();
     String admin= req.getParameter("adminID");
     String password= req.getParameter("pass");
 	try {
 		if(admin.contentEquals("admin") && password.contentEquals("123456")) {
-			mv.setViewName("adminPage.jsp");
+			mv.setViewName("adminPage");
 		}
 		else {
 			Admin adminObj = ad.get(Integer.parseInt(req.getParameter("adminID")));
@@ -42,7 +43,7 @@ public class AdminPage {
 			mv.setViewName("somethingWrongEnter");
 		}
 		return mv;
-	}*/
+	}
 	
 	/*@RequestMapping("/adminLogin")
 	public ModelAndView adminLogin(HttpServletRequest req, HttpServletResponse res) {
