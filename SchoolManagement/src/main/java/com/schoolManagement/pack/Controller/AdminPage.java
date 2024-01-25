@@ -19,19 +19,19 @@ public class AdminPage {
 	@Autowired
 	AdminDao ad;
 	
-	@RequestMapping("/adminLogin")
+	/*@RequestMapping("/adminLogin")
 	public ModelAndView adminLogin(HttpServletRequest req, HttpServletResponse res) {
     ModelAndView mv = new ModelAndView();
     String admin= req.getParameter("adminID");
     String password= req.getParameter("pass");
 	try {
-		if(admin.contentEquals("admin") && password.contentEquals("password")) {
-			mv.setViewName("AdminPage");
+		if(admin.contentEquals("admin") && password.contentEquals("123456")) {
+			mv.setViewName("adminPage.jsp");
 		}
 		else {
 			Admin adminObj = ad.get(Integer.parseInt(req.getParameter("adminID")));
 			if(password.contentEquals(adminObj.getPassword())) {
-				mv.setViewName("AdminPage");
+				mv.setViewName("adminPage");
 			}
 			else {
 				mv.setViewName("somethingWrongEnter");
@@ -42,7 +42,14 @@ public class AdminPage {
 			mv.setViewName("somethingWrongEnter");
 		}
 		return mv;
-	}
+	}*/
+	
+	/*@RequestMapping("/adminLogin")
+	public ModelAndView adminLogin(HttpServletRequest req, HttpServletResponse res) {
+	    ModelAndView mv = new ModelAndView();
+	    mv.setViewName("adminPage.jsp");
+	    return mv;
+	}*/
 	
 	RestTemplate rest=new RestTemplate();
 	@ResponseBody

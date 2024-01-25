@@ -28,7 +28,7 @@ public class SchoolController {
 	@RequestMapping("/getInfoSchool")
 	public ModelAndView getInfoSchool(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("getInfoSchoo");
+		mv.setViewName("getInfoSchool");
 		return mv;
 	}
 	

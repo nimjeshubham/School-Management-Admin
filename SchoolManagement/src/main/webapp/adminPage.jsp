@@ -7,7 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 <br>
 <br>
 <form action="schoolOperations">
@@ -51,8 +50,6 @@ Subject Operations: for registration, get information, update details and delete
 Marksheet Operations: for registration, get information, update details and delete information<br>
 <input type="submit" value="Marksheet"> 
 </form>
-
-
 
 
 
