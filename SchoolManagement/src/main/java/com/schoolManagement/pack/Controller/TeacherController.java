@@ -9,6 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.schoolManagement.pack.Model.Sclass;
 import com.schoolManagement.pack.Model.Teacher;
+import com.schoolManagement.pack.Services.SchoolDao;
 import com.schoolManagement.pack.Services.SclassDao;
 import com.schoolManagement.pack.Services.TeacherDao;
 
@@ -21,47 +22,149 @@ public class TeacherController {
 	@Autowired
 	TeacherDao dao;
 	
+	@Autowired
+	SchoolDao schoolDao;
+	
 	@RequestMapping("/teacherRegitration")
 	public ModelAndView teacherRegitration(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("teacherRegitration");
+		try {
+			mv.setViewName("teacherRegitration");
+		}catch (Exception e) {
+			mv.setViewName("somethingWrongEnter");
+		}
+		
 		return mv;
 	}
 	
 	@RequestMapping("/getInfoTeacher")
 	public ModelAndView getInfoTeacher(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
-		List<Teacher> list = dao.getAll();
-		mv.setViewName("getInfoTeacher");
-		mv.addObject("list", list);
+		try {
+			List<Teacher> list = dao.getAll();
+			mv.setViewName("getInfoTeacher");
+			mv.addObject("list", list);
+		}catch (Exception e) {
+			mv.setViewName("somethingWrongEnter");
+		}
+		
 		return mv;
 	}
 	
 	@RequestMapping("/updateTeacher")
 	public ModelAndView updateTeacher(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
-		Teacher teacher = dao.get(Integer.parseInt(req.getParameter("teacherID")));
-		mv.setViewName("showTeacher");
-		mv.addObject("teacher", teacher);
+		try {
+			Teacher teacher = dao.get(Integer.parseInt(req.getParameter("teacherID")));
+			mv.setViewName("showTeacher");
+			mv.addObject("teacher", teacher);
+		}catch (Exception e) {
+			mv.setViewName("somethingWrongEnter");
+		}
+		
 		return mv;
 	}
 	
 	@RequestMapping("/deleteTeacher")
 	public ModelAndView deleteTeacher(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
-		Teacher teacher = dao.get(Integer.parseInt(req.getParameter("teacherID")));
-		mv.setViewName("showTeacher");
-		mv.addObject("teacher", teacher);
+		try {
+			Teacher teacher = dao.get(Integer.parseInt(req.getParameter("teacherID")));
+			mv.setViewName("showTeacher");
+			mv.addObject("teacher", teacher);
+		}catch (Exception e) {
+			mv.setViewName("somethingWrongEnter");
+		}
+		
 		return mv;
 	}
 	
 	@RequestMapping("/getOneTeacher")
 	public ModelAndView getOneTeacher(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
-		Teacher teacher = dao.get(Integer.parseInt(req.getParameter("teacherID")));
-		mv.setViewName("showTeacher");
-		mv.addObject("teacher", teacher);
+		try {
+			Teacher teacher = dao.get(Integer.parseInt(req.getParameter("teacherID")));
+			mv.setViewName("showTeacher");
+			mv.addObject("teacher", teacher);
+		}catch (Exception e) {
+			mv.setViewName("somethingWrongEnter");
+		}
+		
 		return mv;
 	}
+	
+	@RequestMapping("/newTeacher")
+	public ModelAndView newTeacher(HttpServletRequest req, HttpServletResponse res) {
+		ModelAndView mv = new ModelAndView();
+		try {
+			Teacher teacher = new Teacher();
+			if(schoolDao.get(Integer.parseInt(req.getParameter("schoolId")))!=null) {
+			teacher.setName(req.getParameter("name"));
+			teacher.setSchool(schoolDao.get(Integer.parseInt(req.getParameter("schoolId"))));
+			teacher.setAddress(req.getParameter("address"));
+			teacher.setPassword(req.getParameter("password"));
+			dao.insert(teacher);
+			}
+			else 
+				mv.setViewName("setSchool");
+			mv.setViewName("showTeacher");
+			mv.addObject("teacher", teacher);
+		}catch (Exception e) {
+			mv.setViewName("somethingWrongEnter");
+		}
+		
+		return mv;
+	}
+	
+	@RequestMapping("/updateTeacherForm")
+	public ModelAndView updateTeacherForm(HttpServletRequest req, HttpServletResponse res) {
+		ModelAndView mv = new ModelAndView();
+		try {
+			mv.setViewName("updateTeacherForm");
+		}catch (Exception e) {
+			mv.setViewName("somethingWrongEnter");
+		}
+		
+		return mv;
+	}
+	
+	@RequestMapping("/deleteTeacherForm")
+	public ModelAndView deleteTeacherForm(HttpServletRequest req, HttpServletResponse res) {
+		ModelAndView mv = new ModelAndView();
+		try {
+			dao.deleteById(Integer.parseInt(req.getParameter("teacherID")));
+			mv.setViewName("adminPage");
+		}catch (Exception e) {
+			mv.setViewName("somethingWrongEnter");
+		}
+		
+		return mv;
+		
+	}
+	
+	@RequestMapping("/updateTeacherFinal")
+	public ModelAndView updateTeacherFinal(HttpServletRequest req, HttpServletResponse res) {
+		ModelAndView mv = new ModelAndView();
+		try {
+			Teacher teacher = dao.get(Integer.parseInt(req.getParameter("tID")));
+			if(schoolDao.get(Integer.parseInt(req.getParameter("schoolId")))!=null) {
+			teacher.setName(req.getParameter("name"));
+			teacher.setSchool(schoolDao.get(Integer.parseInt(req.getParameter("schoolId"))));
+			teacher.setAddress(req.getParameter("address"));
+			teacher.setPassword(req.getParameter("password"));
+			dao.update(teacher);
+			}
+			else 
+				mv.setViewName("setSchool");
+			mv.setViewName("showTeacher");
+			mv.addObject("teacher", teacher);
+		}catch (Exception e) {
+			mv.setViewName("somethingWrongEnter");
+		}
+		
+		return mv;
+	}
+	
+	
 
 }

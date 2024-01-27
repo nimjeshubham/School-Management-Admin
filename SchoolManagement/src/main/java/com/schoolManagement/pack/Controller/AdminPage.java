@@ -62,10 +62,9 @@ public class AdminPage {
 		rest.getForObject(url, String.class);
 		
 		
-		}catch (final HttpClientErrorException e) {
-	    System.out.println(e.getStatusCode());
-	    System.out.println(e.getResponseBodyAsString());
-	}
+		}catch (Exception e) {
+			mv.setViewName("somethingWrongEnter");
+		}
 		
 		return mv;
 	
@@ -75,42 +74,72 @@ public class AdminPage {
 	@RequestMapping("/schoolOperations")
 	public ModelAndView schoolOperations(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("schoolOperations");
+		try {
+			mv.setViewName("schoolOperations");
+		}catch (Exception e) {
+			mv.setViewName("somethingWrongEnter");
+		}
+		
 		return mv;
 	}
 	
 	@RequestMapping("/classOperations")
 	public ModelAndView classOperations(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("classOperations");
+		try {
+			mv.setViewName("classOperations");
+		}catch (Exception e) {
+			mv.setViewName("somethingWrongEnter");
+		}
+		
 		return mv;
 	}
 	
 	@RequestMapping("/teacherOperations")
 	public ModelAndView teacherOperations(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("teacherOperations");
+		try {
+			mv.setViewName("teacherOperations");
+		}catch (Exception e) {
+			mv.setViewName("somethingWrongEnter");
+		}
+		
 		return mv;
 	}
 	
 	@RequestMapping("/studentOperations")
 	public ModelAndView studentOperations(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("studentOperations");
+		try {
+			mv.setViewName("studentOperations");
+		}catch (Exception e) {
+			mv.setViewName("somethingWrongEnter");
+		}
+		
 		return mv;
 	}
 	
 	@RequestMapping("/subjectOperations")
 	public ModelAndView subjectOperations(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("subjectOperations");
+		try {
+			mv.setViewName("subjectOperations");
+		}catch (Exception e) {
+			mv.setViewName("somethingWrongEnter");
+		}
+		
 		return mv;
 	}
 	
 	@RequestMapping("/marksheetOperations")
 	public ModelAndView marksheetOperations(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("marksheetOperations");
+		try {
+			mv.setViewName("marksheetOperations");
+		}catch (Exception e) {
+			mv.setViewName("somethingWrongEnter");
+		}
+		
 		return mv;
 	}
 

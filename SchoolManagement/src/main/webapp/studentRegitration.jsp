@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h1>Student Registration form</h1>
+
+<form action="newStudent">
+School ID <input type ="text" name="schoolId">
+Class ID <input type ="text"  name ="classId">
+Enrollment Number <input type="text" name="enrollment">
+Name <input type="text" name="name">
+Father's Name <input type="text" name="fname">
+Mother's Name <input type ="text" name="mname">
+Address <input type ="text" name = "address">
+Password <input type ="text" name ="password">
+
+<input type="submit" value ="Register"> 
+  
+</form>
+
+</body>
+</html>

@@ -29,6 +29,7 @@ public class SclassDao {
 	
 	public Sclass update(Sclass s) {
 		Sclass ss =repo.findById(s.getSclass()).orElse(null);
+		ss.setName(s.getName());
 		ss.setSection(s.getSection());
 		ss.setClassTeacher(s.getClassTeacher());
 		ss.setSchool(s.getSchool());
