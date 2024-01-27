@@ -41,9 +41,13 @@ public class MarksheetController {
 	public ModelAndView getInfoMarksheet(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
 		try {
-			List<Marksheet> list = dao.getAll();
-			mv.setViewName("getInfoMarksheet");
-			mv.addObject("list", list);
+			if (dao.getAll() != null) {
+				List<Marksheet> list = dao.getAll();
+				mv.setViewName("getInfoMarksheet");
+				mv.addObject("list", list);
+			}else
+				mv.setViewName("somethingWrongEnter");
+			
 		}catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
 		}
@@ -55,10 +59,16 @@ public class MarksheetController {
 	public ModelAndView getOneMarksheet (HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
 		try {
-			Marksheet marksheet = dao.get(Integer.parseInt(req.getParameter("markID")));
-			mv.setViewName("showMarksheet");
-			mv.addObject("marksheet", marksheet);
-		}catch (Exception e) {
+			if(dao.get(Integer.parseInt(req.getParameter("markID"))) != null) {
+			     Marksheet marksheet = dao.get(Integer.parseInt(req.getParameter("markID")));
+			     mv.setViewName("showMarksheet");
+			     mv.addObject("marksheet", marksheet);
+			}
+			else
+				mv.setViewName("somethingWrongEnter");
+				
+		}
+		catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
 		}
 		
@@ -69,9 +79,13 @@ public class MarksheetController {
 	public ModelAndView updateMarksheet (HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
 		try {
-			Marksheet marksheet = dao.get(Integer.parseInt(req.getParameter("markID")));
-			mv.setViewName("showMarksheet");
-			mv.addObject("marksheet", marksheet);
+			if (dao.get(Integer.parseInt(req.getParameter("markID"))) != null) {
+				Marksheet marksheet = dao.get(Integer.parseInt(req.getParameter("markID")));
+				mv.setViewName("showMarksheet");
+				mv.addObject("marksheet", marksheet);
+			}else
+				mv.setViewName("somethingWrongEnter");
+			
 		}catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
 		}
@@ -83,9 +97,13 @@ public class MarksheetController {
 	public ModelAndView deleteMarksheet (HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
 		try {
-			Marksheet marksheet = dao.get(Integer.parseInt(req.getParameter("markID")));
-			mv.setViewName("showMarksheet");
-			mv.addObject("marksheet", marksheet);
+			if(dao.get(Integer.parseInt(req.getParameter("markID"))) != null) {
+				Marksheet marksheet = dao.get(Integer.parseInt(req.getParameter("markID")));
+				mv.setViewName("showMarksheet");
+				mv.addObject("marksheet", marksheet);
+			}else
+				mv.setViewName("somethingWrongEnter");
+			
 		}
 		catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
@@ -180,8 +198,13 @@ public class MarksheetController {
 	public ModelAndView deleteMarksheetForm(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
 		try {
-			dao.deleteById(Integer.parseInt(req.getParameter("markID")));
-			mv.setViewName("adminPage");
+			if(dao.get(Integer.parseInt(req.getParameter("markID"))) != null) {
+				dao.deleteById(Integer.parseInt(req.getParameter("markID")));
+				mv.setViewName("adminPage");
+			}
+			else
+				mv.setViewName("somethingWrongEnter");
+			
 		}catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
 		}
@@ -194,15 +217,19 @@ public class MarksheetController {
 	public ModelAndView updateMarksheetFinal (HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
 		try {
-			Marksheet marksheet = dao.get(Integer.parseInt(req.getParameter("marksheetID")));
-			marksheet.setStudent(studentDao.get(req.getParameter("studentId")));
-			marksheet.setExam(req.getParameter("exam"));
-			marksheet.setSubject(req.getParameter("subject1"));
-			marksheet.setMarks(Integer.parseInt(req.getParameter("marks1")));
-			dao.update(marksheet);
+			if (dao.get(Integer.parseInt(req.getParameter("marksheetID"))) != null) {
+				Marksheet marksheet = dao.get(Integer.parseInt(req.getParameter("marksheetID")));
+				marksheet.setStudent(studentDao.get(req.getParameter("studentId")));
+				marksheet.setExam(req.getParameter("exam"));
+				marksheet.setSubject(req.getParameter("subject1"));
+				marksheet.setMarks(Integer.parseInt(req.getParameter("marks1")));
+				dao.update(marksheet);
+				
+				mv.setViewName("showMarksheet");
+				mv.addObject("marksheet", marksheet);
+			}else
+				mv.setViewName("somethingWrongEnter");
 			
-			mv.setViewName("showMarksheet");
-			mv.addObject("marksheet", marksheet);
 		}catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
 		}

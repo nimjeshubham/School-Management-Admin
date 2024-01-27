@@ -41,9 +41,13 @@ public class TeacherController {
 	public ModelAndView getInfoTeacher(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
 		try {
-			List<Teacher> list = dao.getAll();
-			mv.setViewName("getInfoTeacher");
-			mv.addObject("list", list);
+			if( dao.getAll() != null) {
+				List<Teacher> list = dao.getAll();
+				mv.setViewName("getInfoTeacher");
+				mv.addObject("list", list);
+			}else
+				mv.setViewName("somethingWrongEnter");
+			
 		}catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
 		}
@@ -55,9 +59,13 @@ public class TeacherController {
 	public ModelAndView updateTeacher(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
 		try {
-			Teacher teacher = dao.get(Integer.parseInt(req.getParameter("teacherID")));
-			mv.setViewName("showTeacher");
-			mv.addObject("teacher", teacher);
+			if(dao.get(Integer.parseInt(req.getParameter("teacherID"))) != null) {
+				Teacher teacher = dao.get(Integer.parseInt(req.getParameter("teacherID")));
+				mv.setViewName("showTeacher");
+				mv.addObject("teacher", teacher);
+			}else
+				mv.setViewName("somethingWrongEnter");
+			
 		}catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
 		}
@@ -69,9 +77,13 @@ public class TeacherController {
 	public ModelAndView deleteTeacher(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
 		try {
-			Teacher teacher = dao.get(Integer.parseInt(req.getParameter("teacherID")));
-			mv.setViewName("showTeacher");
-			mv.addObject("teacher", teacher);
+			if(dao.get(Integer.parseInt(req.getParameter("teacherID"))) != null) {
+				Teacher teacher = dao.get(Integer.parseInt(req.getParameter("teacherID")));
+				mv.setViewName("showTeacher");
+				mv.addObject("teacher", teacher);
+			}else
+				mv.setViewName("somethingWrongEnter");
+			
 		}catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
 		}
@@ -83,9 +95,13 @@ public class TeacherController {
 	public ModelAndView getOneTeacher(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
 		try {
-			Teacher teacher = dao.get(Integer.parseInt(req.getParameter("teacherID")));
-			mv.setViewName("showTeacher");
-			mv.addObject("teacher", teacher);
+			if(dao.get(Integer.parseInt(req.getParameter("teacherID"))) != null) {
+				Teacher teacher = dao.get(Integer.parseInt(req.getParameter("teacherID")));
+				mv.setViewName("showTeacher");
+				mv.addObject("teacher", teacher);
+			}else
+				mv.setViewName("somethingWrongEnter");
+			
 		}catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
 		}
@@ -132,8 +148,13 @@ public class TeacherController {
 	public ModelAndView deleteTeacherForm(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
 		try {
-			dao.deleteById(Integer.parseInt(req.getParameter("teacherID")));
-			mv.setViewName("adminPage");
+			if(dao.get(Integer.parseInt(req.getParameter("teacherID"))) != null) {
+				dao.deleteById(Integer.parseInt(req.getParameter("teacherID")));
+				mv.setViewName("adminPage");
+			}else
+				mv.setViewName("somethingWrongEnter");
+				
+			
 		}catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
 		}
@@ -146,18 +167,22 @@ public class TeacherController {
 	public ModelAndView updateTeacherFinal(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
 		try {
-			Teacher teacher = dao.get(Integer.parseInt(req.getParameter("tID")));
-			if(schoolDao.get(Integer.parseInt(req.getParameter("schoolId")))!=null) {
-			teacher.setName(req.getParameter("name"));
-			teacher.setSchool(schoolDao.get(Integer.parseInt(req.getParameter("schoolId"))));
-			teacher.setAddress(req.getParameter("address"));
-			teacher.setPassword(req.getParameter("password"));
-			dao.update(teacher);
-			}
-			else 
-				mv.setViewName("setSchool");
-			mv.setViewName("showTeacher");
-			mv.addObject("teacher", teacher);
+			if(dao.get(Integer.parseInt(req.getParameter("tID"))) != null) {
+				Teacher teacher = dao.get(Integer.parseInt(req.getParameter("tID")));
+				if(schoolDao.get(Integer.parseInt(req.getParameter("schoolId")))!=null) {
+				teacher.setName(req.getParameter("name"));
+				teacher.setSchool(schoolDao.get(Integer.parseInt(req.getParameter("schoolId"))));
+				teacher.setAddress(req.getParameter("address"));
+				teacher.setPassword(req.getParameter("password"));
+				dao.update(teacher);
+				}
+				else 
+					mv.setViewName("setSchool");
+				mv.setViewName("showTeacher");
+				mv.addObject("teacher", teacher);
+			}else
+				mv.setViewName("somethingWrongEnter");
+			
 		}catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
 		}

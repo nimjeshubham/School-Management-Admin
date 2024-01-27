@@ -36,9 +36,13 @@ public class SchoolController {
 	public ModelAndView getInfoSchool(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
 		try {
-			List<School> list = dao.getAll();
-			mv.setViewName("getInfoSchool");
-			mv.addObject("list", list);
+			if(dao.getAll() != null) {
+				List<School> list = dao.getAll();
+				mv.setViewName("getInfoSchool");
+				mv.addObject("list", list);
+			}else
+				mv.setViewName("somethingWrongEnter");
+			
 		}catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
 		}
@@ -50,9 +54,13 @@ public class SchoolController {
 	public ModelAndView getOneSchool(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
 		try {
-			School school = dao.get(Integer.parseInt(req.getParameter("schoolID")));
-			mv.setViewName("showSchool");
-			mv.addObject("school", school);
+			if (dao.get(Integer.parseInt(req.getParameter("schoolID"))) != null) {
+				School school = dao.get(Integer.parseInt(req.getParameter("schoolID")));
+				mv.setViewName("showSchool");
+				mv.addObject("school", school);
+			}else
+				mv.setViewName("somethingWrongEnter");
+			
 		}catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
 		}
@@ -64,9 +72,13 @@ public class SchoolController {
 	public ModelAndView updateSchool(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
 		try {
-			School school = dao.get(Integer.parseInt(req.getParameter("schoolID")));
-			mv.setViewName("showSchool");
-			mv.addObject("school", school);
+			if(dao.get(Integer.parseInt(req.getParameter("schoolID"))) != null) {
+				School school = dao.get(Integer.parseInt(req.getParameter("schoolID")));
+				mv.setViewName("showSchool");
+				mv.addObject("school", school);
+			}else
+				mv.setViewName("somethingWrongEnter");
+			
 		}catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
 		}
@@ -78,9 +90,13 @@ public class SchoolController {
 	public ModelAndView deleteSchool(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
 		try {
-			School school = dao.get(Integer.parseInt(req.getParameter("schoolID")));
-			mv.setViewName("showSchool");
-			mv.addObject("school", school);
+			if(dao.get(Integer.parseInt(req.getParameter("schoolID"))) != null) {
+				School school = dao.get(Integer.parseInt(req.getParameter("schoolID")));
+				mv.setViewName("showSchool");
+				mv.addObject("school", school);
+			}else
+				mv.setViewName("somethingWrongEnter");
+			
 		}catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
 		}
@@ -122,8 +138,12 @@ public class SchoolController {
 	public ModelAndView deleteClassForm(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
 		try {
-			dao.deleteById(Integer.parseInt(req.getParameter("schoolID")));
-			mv.setViewName("adminPage");
+			if( dao.get(Integer.parseInt(req.getParameter("schoolId")))!= null) {
+				dao.deleteById(Integer.parseInt(req.getParameter("schoolID")));
+				mv.setViewName("adminPage");
+			}else
+				mv.setViewName("somethingWrongEnter");
+			
 		}catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
 		}
@@ -136,13 +156,17 @@ public class SchoolController {
 	public ModelAndView updateSchoolFinal(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
 		try {
-			School school = dao.get(Integer.parseInt(req.getParameter("schoolId")));
-			school.setName(req.getParameter("schoolName"));
-			school.setPrincipal(req.getParameter("principal"));
-			school.setAddress(req.getParameter("address"));
-			dao.update(school);
-			mv.setViewName("showSchool");
-			mv.addObject("school", school);
+			if(dao.get(Integer.parseInt(req.getParameter("schoolId"))) != null) {
+				School school = dao.get(Integer.parseInt(req.getParameter("schoolId")));
+				school.setName(req.getParameter("schoolName"));
+				school.setPrincipal(req.getParameter("principal"));
+				school.setAddress(req.getParameter("address"));
+				dao.update(school);
+				mv.setViewName("showSchool");
+				mv.addObject("school", school);
+			}else
+				mv.setViewName("somethingWrongEnter");
+			
 		}catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
 		}

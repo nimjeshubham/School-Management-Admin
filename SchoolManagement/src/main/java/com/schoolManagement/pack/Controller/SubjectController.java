@@ -60,9 +60,13 @@ public class SubjectController {
 	public ModelAndView updateSubject (HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
 		try {
-			Subject subject = dao.get(Integer.parseInt(req.getParameter("subjectID")));
-			mv.setViewName("showSubject");
-			mv.addObject("subject", subject);
+			if (dao.get(Integer.parseInt(req.getParameter("subjectID"))) != null) {
+				Subject subject = dao.get(Integer.parseInt(req.getParameter("subjectID")));
+				mv.setViewName("showSubject");
+				mv.addObject("subject", subject);
+			}else
+				mv.setViewName("somethingWrongEnter");
+			
 		}catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
 		}
@@ -74,9 +78,13 @@ public class SubjectController {
 	public ModelAndView getOneSubject (HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
 		try {
-			Subject subject = dao.get(Integer.parseInt(req.getParameter("subjectID")));
-			mv.setViewName("showSubject");
-			mv.addObject("subject", subject);
+			if(dao.get(Integer.parseInt(req.getParameter("subjectID"))) != null) {
+				Subject subject = dao.get(Integer.parseInt(req.getParameter("subjectID")));
+				mv.setViewName("showSubject");
+				mv.addObject("subject", subject);
+			}else
+				mv.setViewName("somethingWrongEnter");
+			
 		}catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
 		}
@@ -88,9 +96,12 @@ public class SubjectController {
 	public ModelAndView deleteSubject (HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
 		try {
-			Subject subject = dao.get(Integer.parseInt(req.getParameter("subjectID")));
-			mv.setViewName("showSubject");
-			mv.addObject("subject", subject);
+			if(dao.get(Integer.parseInt(req.getParameter("subjectID"))) != null) {
+				Subject subject = dao.get(Integer.parseInt(req.getParameter("subjectID")));
+				mv.setViewName("showSubject");
+				mv.addObject("subject", subject);
+			}
+			
 		}catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
 		}
@@ -158,8 +169,11 @@ public class SubjectController {
 	public ModelAndView deleteSubjectForm(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
 		try {
-			dao.deleteById(Integer.parseInt(req.getParameter("subjectID")));
-			mv.setViewName("adminPage");
+			if (dao.get(Integer.parseInt(req.getParameter("subjectID"))) != null) {
+				dao.deleteById(Integer.parseInt(req.getParameter("subjectID")));
+				mv.setViewName("adminPage");
+			}
+			
 		}catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
 		}
@@ -171,37 +185,41 @@ public class SubjectController {
 	public ModelAndView updateSubjectFinal (HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
 		try {
-			Subject subject = dao.get(Integer.parseInt(req.getParameter("subjectID")));
-			subject.setName(req.getParameter("name"));
-			subject.setSclass(sclassDao.get(Integer.parseInt(req.getParameter("classId"))));
-			List<Teacher> list = new ArrayList<>();
-			if (teacherDao.get(Integer.parseInt(req.getParameter("Teacher1")))!= null){
-				Teacher teacher = teacherDao.get(Integer.parseInt(req.getParameter("Teacher1")));
-				list.add(teacher);
-			}
-			else
-				mv.setViewName("setTeacher");
+			if(dao.get(Integer.parseInt(req.getParameter("subjectID"))) != null) {
+				Subject subject = dao.get(Integer.parseInt(req.getParameter("subjectID")));
+				subject.setName(req.getParameter("name"));
+				subject.setSclass(sclassDao.get(Integer.parseInt(req.getParameter("classId"))));
+				List<Teacher> list = new ArrayList<>();
+				if (teacherDao.get(Integer.parseInt(req.getParameter("Teacher1")))!= null){
+					Teacher teacher = teacherDao.get(Integer.parseInt(req.getParameter("Teacher1")));
+					list.add(teacher);
+				}
+				else
+					mv.setViewName("setTeacher");
+				
+				if (teacherDao.get(Integer.parseInt(req.getParameter("Teacher2")))!= null){
+					Teacher teacher = teacherDao.get(Integer.parseInt(req.getParameter("Teacher2")));
+					list.add(teacher);
+				}
+				else
+					mv.setViewName("setTeacher");
+				
+				if (teacherDao.get(Integer.parseInt(req.getParameter("Teacher2")))!= null){
+					Teacher teacher = teacherDao.get(Integer.parseInt(req.getParameter("Teacher2")));
+					list.add(teacher);
+				}
+				else
+					mv.setViewName("setTeacher");
+				
+				subject.setTeacher(list);
+				
+				dao.update(subject);
+				
+				mv.setViewName("showSubject");
+				mv.addObject("subject", subject);
+			}else
+				mv.setViewName("somethingWrongEnter");
 			
-			if (teacherDao.get(Integer.parseInt(req.getParameter("Teacher2")))!= null){
-				Teacher teacher = teacherDao.get(Integer.parseInt(req.getParameter("Teacher2")));
-				list.add(teacher);
-			}
-			else
-				mv.setViewName("setTeacher");
-			
-			if (teacherDao.get(Integer.parseInt(req.getParameter("Teacher2")))!= null){
-				Teacher teacher = teacherDao.get(Integer.parseInt(req.getParameter("Teacher2")));
-				list.add(teacher);
-			}
-			else
-				mv.setViewName("setTeacher");
-			
-			subject.setTeacher(list);
-			
-			dao.update(subject);
-			
-			mv.setViewName("showSubject");
-			mv.addObject("subject", subject);
 		}catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
 		}

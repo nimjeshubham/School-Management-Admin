@@ -40,9 +40,12 @@ public class ClassController {
 	public ModelAndView getInfoclass(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
 		try {
-			List<Sclass> list = dao.getAll();
-			mv.setViewName("getInfoclass");
-			mv.addObject("list", list);
+			if (dao.getAll() != null) {
+				List<Sclass> list = dao.getAll();
+			    mv.setViewName("getInfoclass");
+			    mv.addObject("list", list);
+			}else
+				mv.setViewName("somethingWrongEnter");
 		}catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
 		}
@@ -54,9 +57,13 @@ public class ClassController {
 	public ModelAndView getOneclass (HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
 		try {
-			Sclass sclass = dao.get(Integer.parseInt(req.getParameter("classID")));
-			mv.setViewName("showClass");
-			mv.addObject("sclass", sclass);
+			if(dao.get(Integer.parseInt(req.getParameter("classID"))) != null) {
+				Sclass sclass = dao.get(Integer.parseInt(req.getParameter("classID")));
+				mv.setViewName("showClass");
+				mv.addObject("sclass", sclass);
+			}else
+				mv.setViewName("somethingWrongEnter");
+			
 			
 		}catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
@@ -69,9 +76,13 @@ public class ClassController {
 	public ModelAndView updateclass (HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
 		try {
-			Sclass sclass = dao.get(Integer.parseInt(req.getParameter("classID")));
-			mv.setViewName("showClass");
-			mv.addObject("sclass", sclass);
+			if(dao.get(Integer.parseInt(req.getParameter("classID"))) != null) {
+				Sclass sclass = dao.get(Integer.parseInt(req.getParameter("classID")));
+				mv.setViewName("showClass");
+				mv.addObject("sclass", sclass);
+			}else
+				mv.setViewName("somethingWrongEnter");
+			
 		}catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
 		}
@@ -83,9 +94,13 @@ public class ClassController {
 	public ModelAndView deleteclass (HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
 		try {
-			Sclass sclass = dao.get(Integer.parseInt(req.getParameter("classID")));
-			mv.setViewName("showClass");
-			mv.addObject("sclass", sclass);
+			if (dao.get(Integer.parseInt(req.getParameter("classID"))) != null) {
+				Sclass sclass = dao.get(Integer.parseInt(req.getParameter("classID")));
+				mv.setViewName("showClass");
+				mv.addObject("sclass", sclass);
+			}else
+				mv.setViewName("somethingWrongEnter");
+			
 		}catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
 		}
@@ -135,8 +150,12 @@ public class ClassController {
 	public ModelAndView deleteClassForm(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
 		try {
-			dao.deleteById(Integer.parseInt(req.getParameter("classId")));
-			mv.setViewName("adminPage");
+			if(dao.get(Integer.parseInt(req.getParameter("classID"))) != null) {
+				dao.deleteById(Integer.parseInt(req.getParameter("classId")));
+				mv.setViewName("adminPage");
+			}else
+				mv.setViewName("somethingWrongEnter");
+			
 		}catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
 		}
@@ -149,14 +168,19 @@ public class ClassController {
 	public ModelAndView updateClassFinal(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
 		try {
-			Sclass sclass = dao.get(Integer.parseInt(req.getParameter("classId")));
-			sclass.setName( Integer.parseInt( req.getParameter("name")));
-		    sclass.setSection(req.getParameter("section"));
-		    sclass.setClassTeacher(req.getParameter("classTeacher"));
-		    sclass.setSchool(schoolDao.get(Integer.parseInt(req.getParameter("schoolId"))));
-			dao.update(sclass);
-			mv.setViewName("showClass");
-			mv.addObject("sclass", sclass);
+			
+			if (dao.get(Integer.parseInt(req.getParameter("classId")))!= null) {
+				  Sclass sclass = dao.get(Integer.parseInt(req.getParameter("classId")));
+				  sclass.setName( Integer.parseInt( req.getParameter("name")));
+			      sclass.setSection(req.getParameter("section"));
+			      sclass.setClassTeacher(req.getParameter("classTeacher"));
+			      sclass.setSchool(schoolDao.get(Integer.parseInt(req.getParameter("schoolId"))));
+				  dao.update(sclass);
+				  mv.setViewName("showClass");
+				  mv.addObject("sclass", sclass);
+			}else
+				mv.setViewName("somethingWrongEnter");
+			
 		}catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
 		}

@@ -45,9 +45,13 @@ public class StudentController {
 		ModelAndView mv = new ModelAndView();
 
 		try {
-			List<Student> list = dao.getAll();
-			mv.setViewName("getInfoStudent");
-			mv.addObject("list", list);
+			if (dao.getAll() != null) {
+				List<Student> list = dao.getAll();
+				mv.setViewName("getInfoStudent");
+				mv.addObject("list", list);
+			}else
+				mv.setViewName("somethingWrongEnter");
+			
 		}catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
 		}
@@ -60,9 +64,13 @@ public class StudentController {
 		ModelAndView mv = new ModelAndView();
 
 		try {
-			Student student = dao.get(req.getParameter("studentID"));
-			mv.setViewName("showStudent");
-			mv.addObject("student", student);
+			if (dao.get(req.getParameter("studentID")) != null) {
+				Student student = dao.get(req.getParameter("studentID"));
+				mv.setViewName("showStudent");
+				mv.addObject("student", student);
+			}else
+				mv.setViewName("somethingWrongEnter");
+			
 		}catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
 		}
@@ -74,9 +82,14 @@ public class StudentController {
 	public ModelAndView deleteStudent(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
 		try {
-			Student student = dao.get(req.getParameter("studentID"));
-			mv.setViewName("showStudent");
-			mv.addObject("student", student);
+			if (dao.get(req.getParameter("studentID")) != null) {
+				Student student = dao.get(req.getParameter("studentID"));
+				mv.setViewName("showStudent");
+				mv.addObject("student", student);
+			}
+			else
+				mv.setViewName("somethingWrongEnter");
+			
 		}catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
 		}
@@ -88,9 +101,13 @@ public class StudentController {
 	public ModelAndView getOneStudent(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
 		try {
-			Student student = dao.get(req.getParameter("studentID"));
-			mv.setViewName("showStudent");
-			mv.addObject("student", student);
+			if (dao.get(req.getParameter("studentID")) != null) {
+				Student student = dao.get(req.getParameter("studentID"));
+				mv.setViewName("showStudent");
+				mv.addObject("student", student);
+			}else
+				mv.setViewName("somethingWrongEnter");
+			
 		}catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
 		}
@@ -153,8 +170,12 @@ public class StudentController {
 	public ModelAndView deleteStudentForm(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
 		try {
-			dao.deleteById(req.getParameter("studentID"));
-			mv.setViewName("adminPage");
+			if (dao.get(req.getParameter("enrollment")) != null) {
+				dao.deleteById(req.getParameter("studentID"));
+				mv.setViewName("adminPage");
+			}else
+				mv.setViewName("somethingWrongEnter");
+			
 		}catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
 		}
@@ -167,17 +188,21 @@ public class StudentController {
 	public ModelAndView updateStudentFinal(HttpServletRequest req, HttpServletResponse res) {
 		ModelAndView mv = new ModelAndView();
 		try {
-			Student student = dao.get(req.getParameter("enrollment"));
-			student.setSchool(schoolDao.get(Integer.parseInt(req.getParameter("schoolId"))));
-			student.setSclass(classDao.get(Integer.parseInt(req.getParameter("classId"))));
-			student.setName(req.getParameter("name"));
-			student.setFName(req.getParameter("fname"));
-			student.setMName(req.getParameter("mname"));
-			student.setAddress(req.getParameter("address"));
-			student.setPassword(req.getParameter("password"));
-			dao.update(student);
-			mv.setViewName("showStudent");
-			mv.addObject("student", student);
+			if(dao.get(req.getParameter("enrollment")) != null) {
+				Student student = dao.get(req.getParameter("enrollment"));
+				student.setSchool(schoolDao.get(Integer.parseInt(req.getParameter("schoolId"))));
+				student.setSclass(classDao.get(Integer.parseInt(req.getParameter("classId"))));
+				student.setName(req.getParameter("name"));
+				student.setFName(req.getParameter("fname"));
+				student.setMName(req.getParameter("mname"));
+				student.setAddress(req.getParameter("address"));
+				student.setPassword(req.getParameter("password"));
+				dao.update(student);
+				mv.setViewName("showStudent");
+				mv.addObject("student", student);
+			}else
+				mv.setViewName("somethingWrongEnter");
+			
 		}catch (Exception e) {
 			mv.setViewName("somethingWrongEnter");
 		}
