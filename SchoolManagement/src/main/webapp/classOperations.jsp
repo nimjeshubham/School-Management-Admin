@@ -7,8 +7,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h1>Class Operation </h1>
+
 
 <br>
+<a href="adminPage.jsp">Admin Home</a> 
 <br>
 
 <form action="classRegitration">

@@ -10,6 +10,10 @@
 
 <h1>Student Update form</h1>
 
+<br>
+<a href="adminPage.jsp">Admin Home</a> 
+<br>
+
 <form action="updateStudentFinal">
 Enrollment <input type="text" name="enrollment">
 School ID <input type ="text" name="schoolId">

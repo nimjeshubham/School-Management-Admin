@@ -12,6 +12,12 @@
 </head>
 <body>
 <h1>All Subject Information</h1>
+
+<br>
+<a href="adminPage.jsp">Admin Home</a> 
+<br>
+<br>
+
 <% List<Subject> list =(List<Subject>) request.getAttribute("list");
    %>
 <table border="1">

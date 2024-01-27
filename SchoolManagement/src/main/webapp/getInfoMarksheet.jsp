@@ -11,6 +11,12 @@
 </head>
 <body>
 <h1>All Marksheet Information</h1>
+
+<br>
+<a href="adminPage.jsp">Admin Home</a> 
+<br>
+<br>
+
 <% List<Marksheet> list =(List<Marksheet>) request.getAttribute("list"); %>
 <table border="1">
 <thead><td> Marksheet ID </td><td> Student </td> <td> Exam </td> <td> Subject </td> <td> Marks </td>  </thead>
@@ -39,8 +45,7 @@ Enter marksheet ID <input type="text" name="markID">
 </form>
 
 <br>
-<br>
-<a href="adminPage.jsp">Admin Home</a>
+
 
 </body>
 </html>

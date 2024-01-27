@@ -10,11 +10,15 @@
 
 <h1>Class Registration form</h1>
 
+<br>
+<a href="adminPage.jsp">Admin Home</a> 
+<br>
+
 <form action="newClass">
 Class <input type ="text" name ="classId"><br>
 Section <input type ="text"name="section"><br>
 Class Teacher <input type ="text" name ="classTeacher"><br>
-School Id <input type ="number" name ="schoolId"><br>
+School Id <input type ="text" name ="schoolId"><br>
 
 <input type="submit" value ="Register"> 
 

@@ -9,6 +9,10 @@
 <body>
 <h1>Subject Update form</h1>
 
+<br>
+<a href="adminPage.jsp">Admin Home</a> 
+<br>
+
 <form action="updateSubjectFinal">
 Subject ID <input type ="text" name="subjectID">
 Name <input type ="text" name ="name"><br>

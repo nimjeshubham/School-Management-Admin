@@ -7,8 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<h1>Student Operations</h1>
 <br>
+<br>
+<a href="adminPage.jsp">Admin Home</a> 
 <br>
 
 <form action="studentRegitration">

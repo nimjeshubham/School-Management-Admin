@@ -10,6 +10,11 @@
 </head>
 <body>
 <h1> Marksheet Information</h1>
+
+<br>
+<a href="adminPage.jsp">Admin Home</a> 
+<br>
+
 <% Marksheet marksheet =(Marksheet) request.getAttribute("list"); %>
 <table border="1">
 <thead><td> Marksheet ID </td><td> Student </td> <td> Exam </td> <td> Subject </td> <td> Marks </td>  </thead>

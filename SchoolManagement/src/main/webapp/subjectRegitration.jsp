@@ -9,6 +9,10 @@
 <body>
 <h1>Subject Registration form</h1>
 
+<br>
+<a href="adminPage.jsp">Admin Home</a> 
+<br>
+
 <form action="newSubject">
 Name <input type ="text" name ="name"><br>
 Class ID<input type ="text"name="classId"><br>

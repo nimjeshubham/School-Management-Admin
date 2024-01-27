@@ -10,6 +10,11 @@
 </head>
 <body>
 <h1>All Teacher Information</h1>
+
+<br>
+<a href="adminPage.jsp">Admin Home</a> 
+<br>
+
 <%Teacher teacher =(Teacher) request.getAttribute("teacher"); %>
 <table border="1">
 <thead><td> Teacher ID </td><td> Name </td> <td> School </td> <td> Address </td> <td> Password </td>  </thead>

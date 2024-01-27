@@ -10,6 +10,12 @@
 </head>
 <body>
 <h1>All School Information</h1>
+
+<br>
+<a href="adminPage.jsp">Admin Home</a> 
+<br>
+<br>
+
 <% List<School> list =(List<School>) request.getAttribute("list"); %>
 <table border="1">
 <thead><td> School ID </td><td> School Name </td> <td> Principal </td> <td> Address </td> </thead>

@@ -7,7 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<h1>School Operation</h1>
+<br>
+<a href="adminPage.jsp">Admin Home</a> 
+<br>
 <br>
 <br>
 
@@ -29,6 +32,7 @@ Get Information for all School<br>
 
 <form action="getOneSchool">
 For Individual School Information<br>
+Enter ID
 <input type="text" name ="schoolID">
 <input type="submit" value="Details">
 </form>
@@ -38,6 +42,7 @@ For Individual School Information<br>
 
 <form action="updateSchool">
 for update Information of school<br>
+Enter ID
 <input type="text" name="schoolID">
 <input type ="submit" value="Update">
 </form>
@@ -47,6 +52,7 @@ for update Information of school<br>
 
 <form action="deleteSchool">
 for delete school information<br>
+Enter ID
 <input type="text" name="schoolID">
 <input type="submit" value="Delete">
 </form>

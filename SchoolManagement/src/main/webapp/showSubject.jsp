@@ -12,6 +12,11 @@
 </head>
 <body>
 <h1> Subject Information</h1>
+
+<br>
+<a href="adminPage.jsp">Admin Home</a> 
+<br>
+
 <% Subject subject =(Subject) request.getAttribute("subject");
    %>
 <table border="1">

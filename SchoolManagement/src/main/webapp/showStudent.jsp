@@ -11,6 +11,11 @@
 </head>
 <body>
 <h1> Student Information</h1>
+
+<br>
+<a href="adminPage.jsp">Admin Home</a> 
+<br>
+
 <%Student student =(Student) request.getAttribute("student"); %>
 <table border="1">
 <thead><td> Enrollment Number </td> <td>Name</td> <td> School </td> <td> Class </td> <td> Father's Name </td>

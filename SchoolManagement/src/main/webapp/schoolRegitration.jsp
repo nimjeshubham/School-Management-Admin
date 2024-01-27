@@ -10,6 +10,10 @@
 
 <h1>School Registration form</h1>
 
+<br>
+<a href="adminPage.jsp">Admin Home</a> 
+<br>
+
 <form action="newSchool">
 School Name <input type ="text" name ="schoolName"><br>
 Principal <input type ="text"name ="principal"><br>

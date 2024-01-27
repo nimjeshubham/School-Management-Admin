@@ -10,15 +10,19 @@
 
 <h1>Student Registration form</h1>
 
+<br>
+<a href="adminPage.jsp">Admin Home</a> 
+<br>
+
 <form action="newStudent">
-School ID <input type ="text" name="schoolId">
-Class ID <input type ="text"  name ="classId">
-Enrollment Number <input type="text" name="enrollment">
-Name <input type="text" name="name">
-Father's Name <input type="text" name="fname">
-Mother's Name <input type ="text" name="mname">
-Address <input type ="text" name = "address">
-Password <input type ="text" name ="password">
+School ID <input type ="text" name="schoolId"><br>
+Class ID <input type ="text"  name ="classId"><br>
+Enrollment Number <input type="text" name="enrollment"><br>
+Name <input type="text" name="name"><br>
+Father's Name <input type="text" name="fname"><br>
+Mother's Name <input type ="text" name="mname"><br>
+Address <input type ="text" name = "address"><br>
+Password <input type ="text" name ="password"><br>
 
 <input type="submit" value ="Register"> 
   

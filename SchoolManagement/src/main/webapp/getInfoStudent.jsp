@@ -12,6 +12,11 @@
 </head>
 <body>
 <h1>All Student Information</h1>
+
+<br>
+<a href="adminPage.jsp">Admin Home</a> 
+<br>
+<br>
 <% List<Student> list =(List<Student>) request.getAttribute("list"); %>
 <table border="1">
 <thead><td> Enrollment Number </td> <td>Name</td> <td> School </td> <td> Class </td> <td> Father's Name </td>

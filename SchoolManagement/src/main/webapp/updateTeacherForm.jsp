@@ -9,6 +9,10 @@
 <body>
 <h1>Teacher Update form</h1>
 
+<br>
+<a href="adminPage.jsp">Admin Home</a> 
+<br>
+
 <form action="updateTeacherFinal">
 Teacher Id <input type ="text" name ="tID"><br>
 Name <input type ="text" name ="name"><br>

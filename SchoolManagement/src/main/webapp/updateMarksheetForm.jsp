@@ -9,6 +9,10 @@
 <body>
 <h1>Marksheet update form</h1>
 
+<br>
+<a href="adminPage.jsp">Admin Home</a> 
+<br>
+
 <form action="updateMarksheetFinal">
 Marksheet Id <input type= "text" name = "marksheetID">
 Student Id <input type ="text" name ="studentId"><br>

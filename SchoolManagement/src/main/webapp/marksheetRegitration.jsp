@@ -9,6 +9,10 @@
 <body>
 <h1>Marksheet Registration form</h1>
 
+<br>
+<a href="adminPage.jsp">Admin Home</a> 
+<br>
+
 <form action="newMarksheet">
 Student Id <input type ="text" name ="studentId"><br>
 Exam <input type ="text" name ="exam"><br>

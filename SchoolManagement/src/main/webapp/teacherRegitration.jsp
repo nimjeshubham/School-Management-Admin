@@ -9,6 +9,10 @@
 <body>
 <h1>Teacher Registration form</h1>
 
+<br>
+<a href="adminPage.jsp">Admin Home</a> 
+<br>
+
 <form action="newTeacher">
 Name <input type ="text" name ="name"><br>
 School Id <input type ="text"name="schoolId"><br>

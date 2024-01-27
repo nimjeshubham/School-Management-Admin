@@ -8,7 +8,11 @@
 </head>
 <body>
 
+
+<h1>Subject Operation</h1>
+
 <br>
+<a href="adminPage.jsp">Admin Home</a> 
 <br>
 
 <form action="subjectRegitration">

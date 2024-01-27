@@ -11,6 +11,9 @@
 </head>
 <body>
 <h1>All Class Information</h1>
+<br>
+<a href="adminPage.jsp">Admin Home</a> 
+<br>
 <% List<Sclass> list =(List<Sclass>) request.getAttribute("list"); %>
 <table border="1">
 <thead><td> Class ID </td><td> Class </td> <td> Section </td> <td> Class Teacher </td> <td> School </td>  </thead>
@@ -40,6 +43,6 @@ Enter Class ID <input type="text" name="classID">
 
 <br>
 <br>
-<a href="adminPage.jsp">Admin Home</a> 
+
 </body>
 </html>

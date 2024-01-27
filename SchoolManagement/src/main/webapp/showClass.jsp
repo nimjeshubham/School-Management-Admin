@@ -10,6 +10,12 @@
 </head>
 <body>
 
+<h1> Class Details</h1>
+
+<br>
+<a href="adminPage.jsp">Admin Home</a> 
+<br>
+
 <% Sclass sclass =(Sclass) request.getAttribute("sclass"); %>
 <table border="1">
 <thead><td> Class ID</td><td> Class </td> <td> Section </td> <td> Class Teacher </td> <td> School </td>  </thead>

@@ -8,7 +8,10 @@
 </head>
 <body>
 
+<h1>Marksheet Operations</h1>
+
 <br>
+<a href="adminPage.jsp">Admin Home</a> 
 <br>
 
 <form action="marksheetRegitration">

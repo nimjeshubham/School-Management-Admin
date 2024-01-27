@@ -15,7 +15,7 @@ import lombok.Data;
 public class Sclass {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int sclass;
 	private int name;
 	private String section;
