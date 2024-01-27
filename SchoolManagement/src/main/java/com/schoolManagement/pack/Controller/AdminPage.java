@@ -37,12 +37,12 @@ public class AdminPage {
 				mv.setViewName("adminPage");
 			}
 			else {
-				mv.setViewName("somethingWrongEnter");
+				mv.setViewName("somethingWrongEnter1");
 			}
 		}
 		
 		}catch (Exception e) {
-			mv.setViewName("somethingWrongEnter");
+			mv.setViewName("somethingWrongEnter1");
 		}
 		return mv;
 	}
@@ -63,7 +63,7 @@ public class AdminPage {
 		
 		
 		}catch (Exception e) {
-			mv.setViewName("somethingWrongEnter");
+			mv.setViewName("somethingWrongEnter1");
 		}
 		
 		return mv;
