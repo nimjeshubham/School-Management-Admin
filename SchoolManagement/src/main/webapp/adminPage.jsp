@@ -11,7 +11,8 @@
 <br>
 <br>
 <br>
-<a href="index.jsp">Log out</a> 
+<a href="index.jsp">Log out</a>
+<a href="ContactUs.jsp">Contact Us</a> 
 <br>
 <form action="schoolOperations">
 School Operations: for registration, get information, update details and delete information<br>

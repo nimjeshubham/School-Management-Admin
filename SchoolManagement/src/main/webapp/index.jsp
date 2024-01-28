@@ -10,6 +10,10 @@
 
 <h1>Welcome To School Management System</h1>
 
+<br>
+<a href="ContactUs.jsp">Contact Us</a>
+<br>
+
 <form action="adminLogin">
 Admin ID <input type="text" name ="adminID"><br>
 Password <input type="password" name ="pass"><br>

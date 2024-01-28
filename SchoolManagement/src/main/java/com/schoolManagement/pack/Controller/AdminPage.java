@@ -10,7 +10,9 @@ import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.schoolManagement.pack.Model.Admin;
+import com.schoolManagement.pack.Model.Contact;
 import com.schoolManagement.pack.Services.AdminDao;
+import com.schoolManagement.pack.Services.ContactDao;
 
 import jakarta.servlet.http.HttpServletRequest;
 
@@ -21,6 +23,9 @@ public class AdminPage {
 	
 	@Autowired
 	AdminDao ad;
+	
+	@Autowired
+	ContactDao cDao;
 	
 	@RequestMapping("/adminLogin")
 	public ModelAndView adminLogin(HttpServletRequest req, HttpServletResponse res) {
@@ -141,6 +146,19 @@ public class AdminPage {
 		}
 		
 		return mv;
+	}
+	
+	@RequestMapping("/contact")
+	public ModelAndView contact(HttpServletRequest req, HttpServletResponse res) {
+		ModelAndView mv = new ModelAndView();
+		Contact contact = new Contact();
+		contact.setName(req.getParameter("name"));
+		contact.setEmail(req.getParameter("email"));
+		contact.setMassage(req.getParameter("massage"));
+		cDao.insert(contact);
+		mv.setViewName("index");
+		return mv;
+		
 	}
 
 

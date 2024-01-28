@@ -14,6 +14,7 @@
 <br>
 <a href="adminPage.jsp">Admin Home</a> 
 <a href="index.jsp">Log out</a> 
+<a href="ContactUs.jsp">Contact Us</a>
 <br>
 <% List<Sclass> list =(List<Sclass>) request.getAttribute("list"); %>
 <table border="1">

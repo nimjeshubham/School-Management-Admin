@@ -10,6 +10,7 @@
 <h1>Something wrong</h1>
 <br>
 <a href="index.jsp">Log in page</a> 
+<a href="ContactUs.jsp">Contact Us</a>
 <br>
 Check:<br>
 

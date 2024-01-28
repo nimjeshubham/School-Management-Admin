@@ -16,6 +16,7 @@
 <br>
 <a href="adminPage.jsp">Admin Home</a> 
 <a href="index.jsp">Log out</a> 
+<a href="ContactUs.jsp">Contact Us</a>
 <br>
 <br>
 
