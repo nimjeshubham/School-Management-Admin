@@ -10,6 +10,9 @@
 <h1>Admin Page</h1>
 <br>
 <br>
+<br>
+<a href="index.jsp">Log out</a> 
+<br>
 <form action="schoolOperations">
 School Operations: for registration, get information, update details and delete information<br>
 <input type="submit" value="School"> 

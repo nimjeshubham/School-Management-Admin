@@ -13,6 +13,7 @@
 <h1>All Class Information</h1>
 <br>
 <a href="adminPage.jsp">Admin Home</a> 
+<a href="index.jsp">Log out</a> 
 <br>
 <% List<Sclass> list =(List<Sclass>) request.getAttribute("list"); %>
 <table border="1">

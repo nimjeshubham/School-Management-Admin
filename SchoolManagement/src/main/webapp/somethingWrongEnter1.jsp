@@ -9,6 +9,8 @@
 <body>
 <h1>Something wrong</h1>
 <br>
+<a href="index.jsp">Log in page</a> 
+<br>
 Check:<br>
 
 1. Credentials can be wrong.<br>

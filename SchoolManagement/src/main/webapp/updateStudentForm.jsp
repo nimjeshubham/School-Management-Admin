@@ -12,6 +12,7 @@
 
 <br>
 <a href="adminPage.jsp">Admin Home</a> 
+<a href="index.jsp">Log out</a> 
 <br>
 
 <form action="updateStudentFinal">

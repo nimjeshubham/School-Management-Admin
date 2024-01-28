@@ -10,7 +10,8 @@
 <h1>School Update form</h1>
 
 <br>
-<a href="adminPage.jsp">Admin Home</a> 
+<a href="adminPage.jsp">Admin Home</a>
+<a href="index.jsp">Log out</a>  
 <br>
 
 <form action="updateSchoolFinal">

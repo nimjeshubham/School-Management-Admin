@@ -14,6 +14,7 @@
 
 <br>
 <a href="adminPage.jsp">Admin Home</a> 
+<a href="index.jsp">Log out</a> 
 <br>
 
 <% Sclass sclass =(Sclass) request.getAttribute("sclass"); %>

@@ -12,7 +12,8 @@
 <h1> Marksheet Information</h1>
 
 <br>
-<a href="adminPage.jsp">Admin Home</a> 
+<a href="adminPage.jsp">Admin Home</a>
+<a href="index.jsp">Log out</a>  
 <br>
 
 <% Marksheet marksheet =(Marksheet) request.getAttribute("list"); %>

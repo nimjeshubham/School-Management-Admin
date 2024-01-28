@@ -52,7 +52,7 @@ public class AdminPage {
 	@RequestMapping("/userLogin")
 	public ModelAndView userLogin(HttpServletRequest req , HttpServletResponse res ) {
 		ModelAndView mv= new ModelAndView();
-		try {
+		//try {
 		String userID = req.getParameter("userID");
 		String password = req.getParameter("pass");  
 		String selector = req.getParameter("selector");
@@ -62,9 +62,9 @@ public class AdminPage {
 		rest.getForObject(url, String.class);
 		
 		
-		}catch (Exception e) {
-			mv.setViewName("somethingWrongEnter1");
-		}
+		//}catch (Exception e) {
+		//	mv.setViewName("somethingWrongEnter1");
+		//}
 		
 		return mv;
 	
