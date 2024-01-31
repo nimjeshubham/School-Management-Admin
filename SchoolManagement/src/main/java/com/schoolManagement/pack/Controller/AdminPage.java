@@ -1,13 +1,19 @@
 package com.schoolManagement.pack.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.client.RestClient;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.client.RestClient.Builder;
+import org.springframework.web.client.RestClient.RequestBodyUriSpec;
+import org.springframework.web.client.RestClient.RequestHeadersUriSpec;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 import com.schoolManagement.pack.Model.Admin;
 import com.schoolManagement.pack.Model.Contact;
@@ -52,26 +58,20 @@ public class AdminPage {
 		return mv;
 	}
 	
-	RestTemplate rest=new RestTemplate();
-	
+   
 	@RequestMapping("/userLogin")
-	public ModelAndView userLogin(HttpServletRequest req , HttpServletResponse res ) {
-		ModelAndView mv= new ModelAndView();
-		//try {
-		String userID = req.getParameter("userID");
-		String password = req.getParameter("pass");  
-		String selector = req.getParameter("selector");
+	public RedirectView userLogin(HttpServletRequest req , HttpServletResponse res ) {
+		RedirectView rv= new RedirectView();
+		try {
 		
-		String url = "http://localhost:8081/SchoolManagement-1/"+userID+"/"+password+"/"+selector;
+		String url = "http://localhost:8081/SchoolManagement-1/";
+		rv.setUrl(url);
+		}catch (Exception e) {
+			
+		}
 		
-		rest.getForObject(url, String.class);
 		
-		
-		//}catch (Exception e) {
-		//	mv.setViewName("somethingWrongEnter1");
-		//}
-		
-		return mv;
+		return rv;
 	
 		
 	}
