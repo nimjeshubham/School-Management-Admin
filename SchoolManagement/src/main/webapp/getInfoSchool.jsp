@@ -44,9 +44,7 @@ Enter School ID <input type="text" name="schoolID">
 <input type="submit" value="Delete">
 </form>
 
-<br>
-<br>
-<a href="adminPage.jsp">Admin Home</a> 
+
 
 </body>
 </html>

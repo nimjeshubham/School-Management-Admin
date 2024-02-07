@@ -1,4 +1,4 @@
-package com.schoolManagement.pack.Services;
+package com.schoolManagement.pack.Repositories;
 
 import java.util.List;
 

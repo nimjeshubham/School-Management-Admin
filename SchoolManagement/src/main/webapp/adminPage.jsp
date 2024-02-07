@@ -56,6 +56,15 @@ Marksheet Operations: for registration, get information, update details and dele
 <input type="submit" value="Marksheet"> 
 </form>
 
+<br>
+<br>
+<form action="TestOperations">
+Test Operations: for registration, get information, update details and delete information<br>
+<input type="submit" value="Test"> 
+</form>
+
+
+
 
 
 </body>
