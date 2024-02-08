@@ -14,7 +14,8 @@ import com.schoolManagement.pack.Model.Question;
 
 
 
-@FeignClient(url = "http://localhost:9090" , value = "questionClient")
+//@FeignClient(url = "http://localhost:9090" , value = "questionClient")
+@FeignClient(name="QUESTION-SERVICE")
 public interface QuestionClient {
 	
 	

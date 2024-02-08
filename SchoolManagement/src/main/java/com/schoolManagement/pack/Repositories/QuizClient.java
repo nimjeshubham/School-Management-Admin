@@ -13,7 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import com.schoolManagement.pack.Model.Test;
 
-@FeignClient(url = "http://localhost:9091" , value = "quizClient")
+//@FeignClient(url = "http://localhost:9091" , value = "quizClient")
+@FeignClient(name="TEST-SERVICE")
 public interface QuizClient {
 	
 	@GetMapping("/get/{id}")
